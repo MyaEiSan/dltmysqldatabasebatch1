@@ -1,0 +1,241 @@
+=>PRIMARY KEY Constraint (PK)
+
+PK unique identifier
+PK constraint uniquely each record in table.
+PK value must unique, cannot contain NULL values.
+PK single or multiple columns (fields).
+
+PRIMARY KEY = Syntax
+Method 1
+CREATE TABLE persons(
+    id INT NOT NULL,
+    firstname VARCHAR(255) NOT NULL,
+    lastname VARCHAR(255),
+    age INT,
+    PRIMARY KEY (id)
+);
+
+Method 2
+CREATE TABLE persons(
+    id INT NOT NULL PRIMARY KEY,
+    firstname VARCHAR(255) NOT NULL,
+    lastname VARCHAR(255),
+    age INT
+    );
+
+
+    __________________________________
+
+    CREATE TABLE computers(
+        brand VARCHAR(255),
+        made VARCHAR(255)
+    );
+
+    INSERT INTO computers(brand,made)
+    VALUE ('asus','china');
+
+    INSERT INTO computers(brand,made)
+    VALUE ('asus','china');
+
+    INSERT INTO computers(brand,made)
+    VALUE ('asus','china');
+
+    INSERT INTO computers(brand,made)
+    VALUE ('asus','china');
+
+    SELECT * FROM computers;
+
+    DROP TABLE computers;
+
+    =>Create Table with PK by brand
+    CREATE TABLE computers(
+        brand VARCHAR(255) NOT NULL ,
+        made VARCHAR(255),
+        PRIMARY KEY (brand)
+    );
+
+    DESC computers;
+
+    INSERT INTO computers (brand,made)
+    VALUE ('asus','china');
+
+    INSERT INTO computers(brand,made)
+    VALUE ('hp','thai');
+
+    *error
+    INSERT INTO computers(brand,made)
+    VALUE ('asus','india');
+
+    DROP TABLE computers;
+
+
+    CREATE TABLE computers(
+        id INT NOT NULL PRIMARY KEY,
+        brand VARCHAR(255),
+        made  VARCHAR(255)
+    );
+
+
+    *error
+    INSERT INTO computers(brand,made)
+    VALUE ('asus','china');
+
+    INSERT INTO computers(id,brand,made)
+    VALUE (1,'asus','china');
+
+    *error
+    INSERT INTO computers(id,brand,made)
+    VALUE (1,'asus','china');
+
+    INSERT INTO computers(id,brand,made)
+    VALUE (2,'hp','thai');
+
+    INSERT INTO computers(id,brand,made)
+    VALUE (3,'hp','thai');
+
+    DROP TABLE computers;
+    __________________________________
+
+    =>Create Table with PK by id using AUTO INCREMENT
+
+    CREATE TABLE computers(
+        id INT NOT NULL AUTO_INCREMENT,
+        brand VARCHAR (255),
+        made VARCHAR(255),
+        PRIMARY KEY (id)
+    );
+
+    DESC computers;
+
+    INSERT INTO computers(brand,made)
+    VALUE ('asus','china');
+
+    INSERT INTO computers(brand,made)
+    VALUE ('asus','china');
+
+    INSERT INTO computers(brand,made)
+    VALUE ('asus','china');
+
+    *error
+    INSERT INTO computers(id,brand,made)
+    VALUE (3,'hp','china');
+
+    INSERT INTO computers(id,brand,made)
+    VALUE (6,'hp','china');
+
+    SELECT * FROM computers;
+
+    INSERT INTO computers(brand,made)
+    VALUE ('dell','indo');
+
+    SELECT * FROM computers;
+
+    17PK
+
+    DROP TABLE computers
+
+    CREATE TABLE computers(
+        id INT(255) NOT NULL AUTO_CREMENT,
+        brand VARCHAR(255),
+        made VARCHAR(255),
+        PRIMARY KEY (id)
+    );
+
+    DESC computers;
+
+    INSERT INTO computers(brand,made)
+    VALUE ('asus','china');
+
+    SELECT * FROM computers;
+
+    *error
+    INSERT INTO computers(id,brand,made)
+    VALUE (1,'asus','china');
+
+    INSERT INTO computers(id,brand,made)
+    VALUE (2,'asus','china');
+
+    SELECT * FROM computers;
+
+    INSERT INTO computers(brand,made)
+    VALUE ('acer','china');
+
+    SELECT * FROM computers;
+
+    INSERT INTO computers(brand,made)
+    VALUE ('samsung','china');
+
+    SELECT * FROM computers;
+
+    INSERT INTO computers(id,brand,made)
+    VALUE (10,'hp','thai');
+
+    SELECT * FROM computers;
+
+    INSERT INTO computers(brand,made)
+    VALUE ('hp','thai');
+
+    SELECT * FROM computers;
+
+    INSERT INTO computers(id,brand,made)
+    VALUE (5,'dell','india');
+
+    SELECT * FROM computers;
+
+    INSERT INTO computers(brand,made)
+    VALUE ('asus','china');
+
+    SELECT * FROM computers;
+
+    INSERT INTO computers(brand,made)
+    VALUE ('asus','china');
+
+    SELECT * FROM computers;
+
+____________________________________
+
+    CREATE TABLE members(
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    firstname VARCHAR(15) NOT NUll,
+    lastname VARCHAR(20) NOT NULL,
+    age INT NOT NULL,
+    status VARCHAR(100) DEFAULT 'employed'
+    );
+
+    INSERT INTO members (firstname,lastname,age,status)
+    VALUE ('aye','mya',25,'employed');
+
+    SELECT * FROM members;
+
+    INSERT INTO members (firstname,lastname,age,status)
+    VALUE ('kyaw','gyi',35,'resigned');
+
+    SELECT * FROM members;
+
+    INSERT INTO members(firstname,lastname,age)
+    VALUE ('hnin','mya',16);
+
+    SELECT * FROM members;
+
+    INSERT INTO members(firstname,lastname,age)
+    VALUE ('aung','htet',32);
+
+    SELECT * FROM members;
+     
+    *error
+    INSERT INT members(firstname,lastname)
+    VALUE ('kyaw','kyaw');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
