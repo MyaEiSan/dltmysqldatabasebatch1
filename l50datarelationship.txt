@@ -184,5 +184,31 @@ VALUES(1,1,'7OOP'),
 
 SELECT * FROM attendances;
 
+_____________________________
+
+webserver
+databaseserver
+emailserver
+fileserver 
+
+
+cd\ = go to drive c
+d: = go to drive d
+
+cd xampp = go to xampp folder
+
+cd mysql = go to mysql folder
+
+cd bin = go to mysql folder
+
+mysql -u root 
+
+SHOW DATABASES;
+
+CREATE TATABASE kotha007;
+
+
+
+
 
 7FM
